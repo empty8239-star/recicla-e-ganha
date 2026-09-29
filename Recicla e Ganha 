@@ -1,0 +1,1776 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Recicla e Ganha</title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f5f4;
+            color: #26332d;
+            line-height: 1.6;
+        }
+
+
+        /* CABEÇALHO */
+
+        header {
+            background: white;
+            border-bottom: 1px solid #d9dfdc;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+
+        .header-content {
+            max-width: 1100px;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 20px;
+        }
+
+
+        .logo h1 {
+            color: #193b2b;
+            font-size: 25px;
+        }
+
+
+        .logo p {
+            color: #65736c;
+            font-size: 13px;
+        }
+
+
+        nav {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+
+        nav a {
+            color: #40544a;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+
+        nav a:hover {
+            color: #193b2b;
+        }
+
+
+        /* ESTRUTURA */
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+
+        section {
+            margin: 30px 15px;
+            padding: 45px;
+
+            background: white;
+
+            border: 1px solid #dfe5e2;
+            border-radius: 10px;
+        }
+
+
+        #inicio {
+            text-align: center;
+
+            padding: 80px 45px;
+
+            background: #e9eeeb;
+
+            border: none;
+        }
+
+
+        h2 {
+            color: #193b2b;
+            margin-bottom: 15px;
+        }
+
+
+        h3 {
+            color: #284c3a;
+            margin-bottom: 8px;
+        }
+
+
+        p {
+            margin-bottom: 12px;
+        }
+
+
+        /* BOTÕES */
+
+        button {
+            border: none;
+
+            background: #294f3b;
+            color: white;
+
+            padding: 11px 18px;
+
+            border-radius: 6px;
+
+            cursor: pointer;
+
+            font-weight: bold;
+        }
+
+
+        button:hover {
+            background: #1e3d2d;
+        }
+
+
+        /* CARTÕES */
+
+        .cards {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(170px, 1fr)
+                );
+
+            gap: 15px;
+
+            margin-top: 20px;
+        }
+
+
+        .card {
+
+            background: #f5f7f6;
+
+            border: 1px solid #dfe5e2;
+
+            border-radius: 8px;
+
+            padding: 20px;
+        }
+
+
+        /* FORMULÁRIOS */
+
+        form {
+            max-width: 600px;
+            margin-top: 20px;
+        }
+
+
+        label {
+
+            display: block;
+
+            margin: 15px 0 6px;
+
+            font-weight: bold;
+
+            color: #34463d;
+        }
+
+
+        input,
+        select {
+
+            width: 100%;
+
+            padding: 12px;
+
+            border: 1px solid #cbd4cf;
+
+            border-radius: 6px;
+
+            background: white;
+
+            font-size: 15px;
+        }
+
+
+        input:focus,
+        select:focus {
+
+            outline: none;
+
+            border-color: #294f3b;
+        }
+
+
+        /* PERFIL */
+
+        .stats {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(180px, 1fr)
+                );
+
+            gap: 15px;
+
+            margin: 20px 0;
+        }
+
+
+        .stat {
+
+            background: #e9eeeb;
+
+            padding: 22px;
+
+            border-radius: 8px;
+
+            text-align: center;
+        }
+
+
+        .stat strong {
+
+            display: block;
+
+            font-size: 30px;
+
+            color: #193b2b;
+        }
+
+
+        /* HISTÓRICO */
+
+        .history {
+            margin-top: 20px;
+        }
+
+
+        .history-item {
+
+            padding: 13px;
+
+            border-bottom:
+                1px solid #dfe5e2;
+        }
+
+
+        /* BENEFÍCIOS */
+
+        .benefit {
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            gap: 15px;
+
+            align-items: center;
+        }
+
+
+        /* MAPA */
+
+        .map {
+
+            position: relative;
+
+            height: 390px;
+
+            margin-top: 20px;
+
+            border:
+                1px solid #cbd4cf;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+
+            background:
+
+                linear-gradient(
+                    25deg,
+                    transparent 47%,
+                    #d5dcd8 48%,
+                    #d5dcd8 50%,
+                    transparent 51%
+                ),
+
+                linear-gradient(
+                    110deg,
+                    transparent 45%,
+                    #d5dcd8 46%,
+                    #d5dcd8 48%,
+                    transparent 49%
+                ),
+
+                #eef2ef;
+        }
+
+
+        .map-title {
+
+            position: absolute;
+
+            top: 15px;
+            left: 15px;
+
+            background: white;
+
+            padding: 10px 14px;
+
+            border-radius: 6px;
+
+            box-shadow:
+                0 2px 8px #0002;
+
+            font-weight: bold;
+
+            z-index: 2;
+        }
+
+
+        .map-point {
+
+            position: absolute;
+
+            width: 24px;
+            height: 24px;
+
+            background: #294f3b;
+
+            border: 3px solid white;
+
+            border-radius: 50%;
+
+            box-shadow:
+                0 2px 7px #0004;
+
+            cursor: pointer;
+        }
+
+
+        .map-point:hover {
+            transform: scale(1.15);
+        }
+
+
+        .point-info {
+
+            margin-top: 18px;
+
+            padding: 18px;
+
+            background: #f5f7f6;
+
+            border:
+                1px solid #dfe5e2;
+
+            border-radius: 8px;
+
+            min-height: 70px;
+        }
+
+
+        /* UTILITÁRIOS */
+
+        .hidden {
+            display: none;
+        }
+
+
+        .small {
+
+            font-size: 13px;
+
+            color: #65736c;
+        }
+
+
+        /* RODAPÉ */
+
+        footer {
+
+            margin-top: 40px;
+
+            padding: 30px;
+
+            background: #193b2b;
+
+            color: white;
+
+            text-align: center;
+        }
+
+
+        /* CELULAR */
+
+        @media (max-width: 700px) {
+
+            .header-content {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+
+            nav {
+                gap: 10px;
+            }
+
+
+            section {
+                padding: 30px 20px;
+            }
+
+
+            #inicio {
+                padding: 55px 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     CABEÇALHO
+========================= -->
+
+<header>
+
+    <div class="header-content">
+
+        <div class="logo">
+
+            <h1>
+                Recicla e Ganha
+            </h1>
+
+            <p>
+                Seu resíduo pode valer mais.
+            </p>
+
+        </div>
+
+
+        <nav>
+
+            <a href="#inicio">
+                Início
+            </a>
+
+            <a href="#como-funciona">
+                Como funciona
+            </a>
+
+            <a href="#materiais">
+                Materiais
+            </a>
+
+            <a href="#pontos-entrega">
+                Pontos de entrega
+            </a>
+
+            <a href="#cadastro">
+                Cadastro
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+
+<!-- =========================
+     INÍCIO
+========================= -->
+
+<section id="inicio">
+
+    <h2>
+        Transformando resíduos em benefícios
+    </h2>
+
+
+    <p>
+        Uma proposta de incentivo à
+        reciclagem e à participação
+        comunitária.
+    </p>
+
+
+    <button id="btnComecar">
+        Começar
+    </button>
+
+</section>
+
+
+
+<!-- =========================
+     COMO FUNCIONA
+========================= -->
+
+<section id="como-funciona">
+
+    <h2>
+        Como funciona
+    </h2>
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <h3>
+                1. Separe
+            </h3>
+
+            <p>
+                Separe os materiais
+                recicláveis.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                2. Entregue
+            </h3>
+
+            <p>
+                Leve os materiais a um
+                ponto de entrega.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                3. Pese
+            </h3>
+
+            <p>
+                O material é pesado
+                e registrado.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                4. Acumule
+            </h3>
+
+            <p>
+                Os pontos são adicionados
+                ao seu perfil.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                5. Troque
+            </h3>
+
+            <p>
+                Use seus pontos para
+                obter benefícios.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     MATERIAIS
+========================= -->
+
+<section id="materiais">
+
+    <h2>
+        Materiais aceitos
+    </h2>
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <h3>
+                PET
+            </h3>
+
+            <p>
+                Garrafas e embalagens.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Plástico
+            </h3>
+
+            <p>
+                Embalagens recicláveis.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Vidro
+            </h3>
+
+            <p>
+                Garrafas e potes.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Alumínio
+            </h3>
+
+            <p>
+                Latas e outros materiais.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Papel
+            </h3>
+
+            <p>
+                Papel reciclável.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Papelão
+            </h3>
+
+            <p>
+                Caixas e embalagens.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Longa vida
+            </h3>
+
+            <p>
+                Embalagens recicláveis.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CADASTRO
+========================= -->
+
+<section id="cadastro">
+
+    <h2>
+        Cadastro do participante
+    </h2>
+
+
+    <p>
+        Crie seu perfil para acompanhar
+        seus pontos e suas entregas.
+    </p>
+
+
+    <form id="formCadastro">
+
+
+        <label for="nome">
+            Nome completo
+        </label>
+
+
+        <input
+            type="text"
+            id="nome"
+            placeholder="Digite seu nome completo"
+            required
+        >
+
+
+
+        <label for="email">
+            E-mail
+        </label>
+
+
+        <input
+            type="email"
+            id="email"
+            placeholder="exemplo@email.com"
+            required
+        >
+
+
+
+        <label for="bairro">
+            Bairro
+        </label>
+
+
+        <input
+            type="text"
+            id="bairro"
+            placeholder="Digite seu bairro"
+            required
+        >
+
+
+
+        <label for="senha">
+            Senha
+        </label>
+
+
+        <input
+            type="password"
+            id="senha"
+            placeholder="Crie uma senha"
+            required
+        >
+
+
+
+        <label for="confirmarSenha">
+            Confirmar senha
+        </label>
+
+
+        <input
+            type="password"
+            id="confirmarSenha"
+            placeholder="Digite a senha novamente"
+            required
+        >
+
+
+
+        <br><br>
+
+
+        <button type="submit">
+            Criar perfil
+        </button>
+
+
+    </form>
+
+</section>
+
+
+
+<!-- =========================
+     PERFIL
+========================= -->
+
+<section
+    id="perfil"
+    class="hidden"
+>
+
+
+    <h2>
+        Meu perfil
+    </h2>
+
+
+    <p>
+        Participante:
+        <strong id="perfilNome">
+            -
+        </strong>
+    </p>
+
+
+    <p>
+        E-mail:
+        <span id="perfilEmail">
+            -
+        </span>
+    </p>
+
+
+    <p class="small">
+        Bairro:
+        <span id="perfilBairro">
+            -
+        </span>
+    </p>
+
+
+
+    <div class="stats">
+
+
+        <div class="stat">
+
+            <strong id="pontos">
+                0
+            </strong>
+
+            Pontos
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong id="totalEntregas">
+                0
+            </strong>
+
+            Entregas
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong id="pesoTotal">
+                0
+            </strong>
+
+            kg entregues
+
+        </div>
+
+
+    </div>
+
+
+
+    <h3>
+        Registrar nova entrega
+    </h3>
+
+
+    <form id="formEntrega">
+
+
+        <label for="material">
+            Material
+        </label>
+
+
+        <select id="material">
+
+
+            <option value="PET">
+                PET
+            </option>
+
+
+            <option value="Plástico">
+                Plástico
+            </option>
+
+
+            <option value="Vidro">
+                Vidro
+            </option>
+
+
+            <option value="Alumínio">
+                Alumínio
+            </option>
+
+
+            <option value="Papel">
+                Papel
+            </option>
+
+
+            <option value="Papelão">
+                Papelão
+            </option>
+
+
+            <option value="Longa vida">
+                Longa vida
+            </option>
+
+
+        </select>
+
+
+
+        <label for="peso">
+            Peso em kg
+        </label>
+
+
+        <input
+            type="number"
+            id="peso"
+            min="0.1"
+            step="0.1"
+            placeholder="Ex.: 2.5"
+        >
+
+
+        <br><br>
+
+
+        <button type="submit">
+            Registrar entrega
+        </button>
+
+
+    </form>
+
+
+
+    <div class="history">
+
+
+        <h3>
+            Histórico de entregas
+        </h3>
+
+
+        <div id="historico">
+
+
+            <p class="small">
+                Nenhuma entrega registrada.
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     BENEFÍCIOS
+========================= -->
+
+<section id="beneficios">
+
+
+    <h2>
+        Benefícios
+    </h2>
+
+
+    <p>
+        Os pontos acumulados podem ser
+        utilizados em benefícios previstos
+        pelo projeto.
+    </p>
+
+
+
+    <div class="cards">
+
+
+        <div class="card benefit">
+
+
+            <div>
+
+                <h3>
+                    Vale-alimentação
+                </h3>
+
+                <p>
+                    Benefício demonstrativo
+                </p>
+
+            </div>
+
+
+            <strong>
+                500 pts
+            </strong>
+
+
+        </div>
+
+
+
+        <div class="card benefit">
+
+
+            <div>
+
+                <h3>
+                    Vale-transporte
+                </h3>
+
+                <p>
+                    Benefício demonstrativo
+                </p>
+
+            </div>
+
+
+            <strong>
+                400 pts
+            </strong>
+
+
+        </div>
+
+
+
+        <div class="card benefit">
+
+
+            <div>
+
+                <h3>
+                    Vale-gás
+                </h3>
+
+                <p>
+                    Benefício demonstrativo
+                </p>
+
+            </div>
+
+
+            <strong>
+                800 pts
+            </strong>
+
+
+        </div>
+
+
+
+        <div class="card benefit">
+
+
+            <div>
+
+                <h3>
+                    Estabelecimentos parceiros
+                </h3>
+
+                <p>
+                    Créditos demonstrativos
+                </p>
+
+            </div>
+
+
+            <strong>
+                300 pts
+            </strong>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     MAPA
+========================= -->
+
+<section id="pontos-entrega">
+
+
+    <h2>
+        Pontos de entrega
+    </h2>
+
+
+    <p>
+        Encontre locais participantes
+        para entregar seus materiais
+        recicláveis.
+    </p>
+
+
+
+    <div class="map">
+
+
+        <div class="map-title">
+
+            Mapa de pontos de entrega
+
+        </div>
+
+
+
+        <div
+            class="map-point"
+            style="left: 25%; top: 35%;"
+            data-name="Ponto Escola"
+            data-address="Escola participante"
+            data-materials="PET, papel e papelão"
+        ></div>
+
+
+
+        <div
+            class="map-point"
+            style="left: 62%; top: 28%;"
+            data-name="Ponto Supermercado"
+            data-address="Supermercado parceiro"
+            data-materials="PET, plástico, vidro e alumínio"
+        ></div>
+
+
+
+        <div
+            class="map-point"
+            style="left: 48%; top: 68%;"
+            data-name="Ponto Comunitário"
+            data-address="Praça / espaço comunitário"
+            data-materials="Papel, papelão, PET e alumínio"
+        ></div>
+
+
+
+        <div
+            class="map-point"
+            style="left: 78%; top: 72%;"
+            data-name="Ponto do Bairro"
+            data-address="Ponto de coleta do bairro"
+            data-materials="Materiais recicláveis selecionados"
+        ></div>
+
+
+    </div>
+
+
+
+    <div
+        id="pointInfo"
+        class="point-info"
+    >
+
+        <p class="small">
+
+            Clique em um ponto do mapa
+            para visualizar as informações.
+
+        </p>
+
+    </div>
+
+
+
+    <p class="small">
+
+        Protótipo demonstrativo:
+        os locais exibidos no mapa não
+        representam pontos reais de coleta.
+
+    </p>
+
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================
+     RODAPÉ
+========================= -->
+
+<footer>
+
+
+    <strong>
+        Recicla e Ganha
+    </strong>
+
+
+    <p>
+        Seu resíduo pode valer mais.
+    </p>
+
+
+</footer>
+
+
+
+<script>
+
+
+/* =========================
+   VARIÁVEIS
+========================= */
+
+
+let pontos = 0;
+
+let totalEntregas = 0;
+
+let pesoTotal = 0;
+
+let historico = [];
+
+
+
+/* =========================
+   BOTÃO COMEÇAR
+========================= */
+
+
+const btnComecar =
+    document.getElementById(
+        "btnComecar"
+    );
+
+
+const cadastro =
+    document.getElementById(
+        "cadastro"
+    );
+
+
+btnComecar.addEventListener(
+    "click",
+    function () {
+
+        cadastro.scrollIntoView({
+            behavior: "smooth"
+        });
+
+    }
+);
+
+
+
+/* =========================
+   CADASTRO
+========================= */
+
+
+document
+    .getElementById("formCadastro")
+    .addEventListener(
+        "submit",
+        function (event) {
+
+
+            event.preventDefault();
+
+
+            const nome =
+                document
+                .getElementById("nome")
+                .value
+                .trim();
+
+
+            const email =
+                document
+                .getElementById("email")
+                .value
+                .trim();
+
+
+            const bairro =
+                document
+                .getElementById("bairro")
+                .value
+                .trim();
+
+
+            const senha =
+                document
+                .getElementById("senha")
+                .value;
+
+
+            const confirmarSenha =
+                document
+                .getElementById(
+                    "confirmarSenha"
+                )
+                .value;
+
+
+
+            /* VERIFICAR CAMPOS */
+
+
+            if (
+                nome === "" ||
+                email === "" ||
+                bairro === "" ||
+                senha === "" ||
+                confirmarSenha === ""
+            ) {
+
+                alert(
+                    "Preencha todos os campos."
+                );
+
+                return;
+            }
+
+
+
+            /* VERIFICAR SENHAS */
+
+
+            if (
+                senha !== confirmarSenha
+            ) {
+
+                alert(
+                    "As senhas não coincidem."
+                );
+
+                return;
+            }
+
+
+
+            /* MOSTRAR DADOS NO PERFIL */
+
+
+            document
+                .getElementById(
+                    "perfilNome"
+                )
+                .textContent = nome;
+
+
+            document
+                .getElementById(
+                    "perfilEmail"
+                )
+                .textContent = email;
+
+
+            document
+                .getElementById(
+                    "perfilBairro"
+                )
+                .textContent = bairro;
+
+
+
+            /* MOSTRAR PERFIL */
+
+
+            document
+                .getElementById("perfil")
+                .classList
+                .remove("hidden");
+
+
+
+            /* IR PARA O PERFIL */
+
+
+            document
+                .getElementById("perfil")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+
+
+
+            alert(
+                "Cadastro realizado com sucesso!"
+            );
+
+
+        }
+    );
+
+
+
+/* =========================
+   REGISTRAR ENTREGA
+========================= */
+
+
+document
+    .getElementById("formEntrega")
+    .addEventListener(
+        "submit",
+        function (event) {
+
+
+            event.preventDefault();
+
+
+            const material =
+                document
+                .getElementById("material")
+                .value;
+
+
+            const peso =
+                Number(
+                    document
+                    .getElementById("peso")
+                    .value
+                );
+
+
+
+            if (
+                peso <= 0 ||
+                isNaN(peso)
+            ) {
+
+                alert(
+                    "Digite um peso válido."
+                );
+
+                return;
+            }
+
+
+
+            /*
+                REGRA DO PROTÓTIPO:
+
+                1 kg = 10 pontos.
+            */
+
+
+            const pontosGanhos =
+                Math.round(
+                    peso * 10
+                );
+
+
+            pontos += pontosGanhos;
+
+            totalEntregas++;
+
+            pesoTotal += peso;
+
+
+
+            historico.push({
+
+                material: material,
+
+                peso: peso,
+
+                pontos: pontosGanhos
+
+            });
+
+
+
+            atualizarPerfil();
+
+
+
+            document
+                .getElementById("peso")
+                .value = "";
+
+
+
+            alert(
+
+                "Entrega registrada!\n\n" +
+
+                material +
+                ": " +
+                peso.toFixed(1) +
+                " kg\n\n" +
+
+                "Pontos ganhos: " +
+                pontosGanhos
+
+            );
+
+        }
+    );
+
+
+
+/* =========================
+   ATUALIZAR PERFIL
+========================= */
+
+
+function atualizarPerfil() {
+
+
+    document
+        .getElementById("pontos")
+        .textContent = pontos;
+
+
+    document
+        .getElementById(
+            "totalEntregas"
+        )
+        .textContent =
+        totalEntregas;
+
+
+    document
+        .getElementById(
+            "pesoTotal"
+        )
+        .textContent =
+        pesoTotal.toFixed(1);
+
+
+
+    const historicoDiv =
+        document.getElementById(
+            "historico"
+        );
+
+
+    historicoDiv.innerHTML = "";
+
+
+
+    historico.forEach(
+        function (item, index) {
+
+
+            const div =
+                document.createElement(
+                    "div"
+                );
+
+
+            div.className =
+                "history-item";
+
+
+            div.innerHTML =
+
+                "<strong>" +
+
+                "Entrega " +
+
+                (index + 1) +
+
+                "</strong><br>" +
+
+                "Material: " +
+
+                item.material +
+
+                "<br>" +
+
+                "Peso: " +
+
+                item.peso.toFixed(1) +
+
+                " kg<br>" +
+
+                "Pontos ganhos: " +
+
+                item.pontos;
+
+
+
+            historicoDiv.appendChild(
+                div
+            );
+
+        }
+    );
+
+}
+
+
+
+/* =========================
+   MAPA
+========================= */
+
+
+const pontosMapa =
+    document.querySelectorAll(
+        ".map-point"
+    );
+
+
+const pointInfo =
+    document.getElementById(
+        "pointInfo"
+    );
+
+
+
+pontosMapa.forEach(
+    function (point) {
+
+
+        point.addEventListener(
+            "click",
+            function () {
+
+
+                const nome =
+                    point.dataset.name;
+
+
+                const endereco =
+                    point.dataset.address;
+
+
+                const materiais =
+                    point.dataset.materials;
+
+
+
+                pointInfo.innerHTML =
+
+                    "<h3>" +
+
+                    nome +
+
+                    "</h3>" +
+
+
+                    "<p>" +
+
+                    "<strong>Local:</strong> " +
+
+                    endereco +
+
+                    "</p>" +
+
+
+                    "<p>" +
+
+                    "<strong>Materiais:</strong> " +
+
+                    materiais +
+
+                    "</p>";
+
+            }
+        );
+
+    }
+);
+
+
+</script>
+
+
+</body>
+
+</html>
